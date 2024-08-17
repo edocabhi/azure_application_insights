@@ -1,7 +1,7 @@
 # Azure Application Insights
 [![pub package](https://img.shields.io/pub/v/azure_application_insights.svg)](https://pub.dartlang.org/packages/azure_application_insights)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## What?
@@ -165,7 +165,7 @@ Future<void> submitErrorAsTelemetry({
 
 ### HTTP Middleware
 
-Whilst you can certainly use `TelemetryClient.trackRequest` to track HTTP requests yourself, you can save time by using the `TelemetryHttpClient` HTTP client. This class will automatically time requests and forward on the details of completed requests to a given `TelemetryClient` as request telemetry items.
+Whilst you can certainly use `TelemetryClient.trackDependency` to track HTTP requests yourself, you can save time by using the `TelemetryHttpClient` HTTP client. This class will automatically time requests and forward on the details of completed requests to a given `TelemetryClient` as dependency telemetry items.
 
 Typical usage looks like this:
 
@@ -175,7 +175,7 @@ final telemetryHttpClient = TelemetryHttpClient(
   inner: Client(),
 );
 
-// This request will be captured as a request telemetry item.
+// This request will be captured as a dependency telemetry item.
 await telemetryHttpClient.get('https://kent-boogaart.com/');
 ```
 
@@ -195,6 +195,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://mernen.com/"><img src="https://avatars.githubusercontent.com/u/6412?v=4?s=100" width="100px;" alt="Daniel Luz"/><br /><sub><b>Daniel Luz</b></sub></a><br /><a href="https://github.com/kentcb/azure_application_insights/commits?author=mernen" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.sandbergit.se"><img src="https://avatars.githubusercontent.com/u/18184100?v=4?s=100" width="100px;" alt="Robert Sandberg"/><br /><sub><b>Robert Sandberg</b></sub></a><br /><a href="https://github.com/kentcb/azure_application_insights/commits?author=RCSandberg" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://robsonsilva.dev"><img src="https://avatars.githubusercontent.com/u/17673296?v=4?s=100" width="100px;" alt="Robson Silva"/><br /><sub><b>Robson Silva</b></sub></a><br /><a href="https://github.com/kentcb/azure_application_insights/commits?author=robsonsilv4" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/m-gug"><img src="https://avatars.githubusercontent.com/u/79441396?v=4?s=100" width="100px;" alt="Michael Gugler"/><br /><sub><b>Michael Gugler</b></sub></a><br /><a href="https://github.com/kentcb/azure_application_insights/commits?author=m-gug" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
